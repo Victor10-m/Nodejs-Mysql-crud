@@ -1,10 +1,10 @@
--- to create a new database
+-- creamos la base de datos
 CREATE DATABASE crudnodejsmysql;
 
--- to use database
+-- usamos la nase de datos
 use crudnodejsmysql;
 
--- creating a new table
+-- creamos una tabla con los siguientes datos
 CREATE TABLE customer (
   id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(50) NOT NULL,
@@ -12,10 +12,10 @@ CREATE TABLE customer (
   phone VARCHAR(15)
 );
 
--- to show all tables
+-- verificamos que la tabla exista dentro de la base de datos
 show tables;
 
--- to describe table
+-- desribimos la tabla
 describe customer;
 
 

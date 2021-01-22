@@ -6,32 +6,35 @@ const express = require('express'),
 
 const app = express();
 
-// importing routes
+// importammos el archivo de rutas que esta en el la carpeta de routes
 const customerRoutes = require('./routes/customer');
 
-// settings
+// confiruracion de puerto para conexion y viclacion de la vista
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // middlewares
 app.use(morgan('dev'));
+
+//  configuracio de conexion de base de datos de mysql
 app.use(myConnection(mysql, {
   host: 'localhost',
-  user: 'root',
-  password: 'contraseña',
+  user: 'victor',
+  password: '12345/',
   port: 3306,
   database: 'crudnodejsmysql'
 }, 'single'));
+
 app.use(express.urlencoded({extended: false}));
 
-// routes
+// usamos la ruta
 app.use('/', customerRoutes);
 
 // static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// starting the server
+// inicializamos el servidor de la app configurando el puerto de salida
 app.listen(app.get('port'), () => {
   console.log(`server on port ${app.get('port')}`);
 });

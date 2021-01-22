@@ -1,7 +1,7 @@
 {
   "name": "crud-nodejs-mysql",
   "version": "1.0.0",
-  "description": "",
+  "description": "this is a basic application crud that uses nodejs in the backend, mysql as database.",
   "main": "index.js",
   "dependencies": {
     "ejs": "^2.5.8",
@@ -18,5 +18,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FaztWeb/crud-nodejs-mysql.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FaztWeb/crud-nodejs-mysql/issues"
+  },
+  "homepage": "https://github.com/FaztWeb/crud-nodejs-mysql#readme"
 }

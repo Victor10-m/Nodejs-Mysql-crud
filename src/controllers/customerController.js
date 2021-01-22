@@ -1,7 +1,9 @@
 const controller = {};
 
+//metodo del controlador el cual nos lista los registros que temenos en la base de datos
 controller.list = (req, res) => {
   req.getConnection((err, conn) => {
+    //consulta que muestra el regristo que tienee la tabla
     conn.query('SELECT * FROM customer', (err, customers) => {
      if (err) {
       res.json(err);
@@ -13,6 +15,7 @@ controller.list = (req, res) => {
   });
 };
 
+// metodo el cual nos permite crear y guardar un nuevo registro
 controller.save = (req, res) => {
   const data = req.body;
   console.log(req.body)
@@ -24,6 +27,7 @@ controller.save = (req, res) => {
   })
 };
 
+//metodo que nos permite actualizar una registro de la mase de datos
 controller.edit = (req, res) => {
   const { id } = req.params;
   req.getConnection((err, conn) => {
@@ -35,6 +39,7 @@ controller.edit = (req, res) => {
   });
 };
 
+//metodo ue actualiza los datos en la base de datos una vex editado el registro
 controller.update = (req, res) => {
   const { id } = req.params;
   const newCustomer = req.body;
@@ -46,6 +51,8 @@ controller.update = (req, res) => {
   });
 };
 
+
+// metodo el cual nos permite eliminar registro de la  base de datos
 controller.delete = (req, res) => {
   const { id } = req.params;
   req.getConnection((err, connection) => {
@@ -55,4 +62,5 @@ controller.delete = (req, res) => {
   });
 }
 
+//exportamos el modulo de controoler para usar en otro momento
 module.exports = controller;
